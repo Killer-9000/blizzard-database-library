@@ -199,7 +199,7 @@ namespace BlizzardDatabaseLib {
             }
         }
 
-        std::size_t WDC3TableReader::RecordCount()
+        uint32_t WDC3TableReader::RecordCount()
         {   
             auto recordCount = 0;
             for (auto& section : _sectionLookup)

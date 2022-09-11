@@ -176,7 +176,7 @@ namespace BlizzardDatabaseLib {
             _stringTable.clear();
         }
 
-        std::size_t WDBCTableReader::RecordCount()
+        uint32_t WDBCTableReader::RecordCount()
         {   
             return Header.RecordsCount;
         }
