@@ -27,12 +27,12 @@ namespace BlizzardDatabaseLib {
             _tableReader->CloseAllSections();
         }
 
-        unsigned int RecordCount()
+        uint32_t RecordCount()
         {
-            return _tableReader->RecordCount();
+            return (uint32_t)_tableReader->RecordCount();
         }
 
-        Structures::BlizzardDatabaseRow Record(unsigned int id)
+        Structures::BlizzardDatabaseRow Record(uint32_t id)
         {
            return _tableReader->RecordById(id);
         }

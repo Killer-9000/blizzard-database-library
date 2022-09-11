@@ -8,9 +8,9 @@ namespace BlizzardDatabaseLib {
     class BlizzardDatabaseRecordCollection
     {
     private:
-        int _minIndex = 0;
-        int _maxIndex = 0;
-        int _currentIndex = -1;
+        uint32_t _minIndex = 0;
+        uint32_t _maxIndex = 0;
+        uint32_t _currentIndex = 0;
         std::shared_ptr<Reader::IBlizzardTableReader> _tableReader;
         Structures::BlizzardDatabaseRow _currentRecord;
     public:
@@ -27,8 +27,8 @@ namespace BlizzardDatabaseLib {
 
         Structures::BlizzardDatabaseRow& Next()
         {
-            _currentIndex++;
             _currentRecord = _tableReader->Record(_currentIndex);
+            _currentIndex++;
             return _currentRecord;
         }
 
